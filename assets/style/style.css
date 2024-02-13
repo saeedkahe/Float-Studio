@@ -1,0 +1,313 @@
+@charset "UTF-8";
+body {
+  background-color: #1e1c23;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background-image: url(../img/bg-noise.webp);
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header {
+  position: relative;
+}
+
+.menu {
+  height: 60px;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 50px;
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 999;
+}
+.menu > div:first-of-type > figure {
+  width: 100%;
+  height: 100%;
+}
+.menu > div:first-of-type > figure > img {
+  width: 100%;
+  height: 100%;
+}
+.menu > div:last-of-type {
+  height: 60%;
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 30px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+.menu > div:last-of-type > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 100%;
+  border-radius: 50%;
+  color: black;
+  background-color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 0;
+  left: -5px;
+}
+.menu > div:last-of-type > span::after {
+  content: "→";
+  transform: rotate(-45deg);
+  display: block;
+}
+.menu > div:last-of-type > a {
+  width: 80%;
+  height: 100%;
+  color: white;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+}
+
+.menuMobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+}
+.menuMobile div {
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.031372549);
+  border: 1px solid rgba(189, 189, 189, 0.137254902);
+  z-index: 999;
+}
+.menuMobile > div:first-of-type {
+  width: 70px;
+  height: 100%;
+}
+.menuMobile > div:first-of-type > figure {
+  width: 60px;
+  height: 100%;
+}
+.menuMobile > div:first-of-type > figure > img {
+  width: 100%;
+  height: 100%;
+}
+.menuMobile > div:last-of-type {
+  height: 100%;
+}
+.menuMobile > div:last-of-type span {
+  height: 100%;
+  width: 20px;
+  height: 1px;
+  border-radius: 1px;
+  background-color: white;
+  position: relative;
+}
+.menuMobile > div:last-of-type span::after, .menuMobile > div:last-of-type span::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  position: absolute;
+  left: 0;
+}
+.menuMobile > div:last-of-type span::before {
+  top: -5px;
+}
+.menuMobile > div:last-of-type span::after {
+  top: 5px;
+}
+
+.ball {
+  width: 400px;
+  height: 400px;
+  background-image: radial-gradient(circle farthest-side at 20% 20%, #d886ab, rgba(230, 91, 154, 0)), radial-gradient(circle closest-corner at 60% 70%, #8768a6, rgba(135, 104, 166, 0));
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  filter: blur(35px);
+  box-shadow: 0 0 200px rgba(161, 104, 166, 0.5490196078), 0 0 50px #8768a6;
+  transform: translateX(-75%) translateY(-65%);
+  z-index: -50;
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 100px;
+  position: relative;
+}
+.banner::before, .banner::after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  background-color: rgba(245, 222, 179, 0.082);
+  position: absolute;
+  top: 0;
+  z-index: -100;
+}
+.banner::after {
+  left: 48px;
+}
+.banner::before {
+  right: 48px;
+}
+.banner > div > div {
+  margin-top: 10%;
+}
+.banner > div > div > h1 {
+  font-size: 10vw;
+  mix-blend-mode: overlay;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.banner > div > div > div > p {
+  color: rgba(218, 218, 218, 0.719);
+  font-size: 14px;
+}
+
+@media screen and (min-width: 992px) {
+  .banner::after {
+    left: 10px;
+  }
+  .banner::before {
+    right: 10px;
+  }
+  .banner > div > div > h1 {
+    font-size: 130px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .banner > div > div > h1 {
+    font-size: 160px;
+  }
+}
+.about > div > div:first-of-type > div {
+  width: 100%;
+  border-bottom: 1px solid rgba(189, 189, 189, 0.137254902);
+  display: flex;
+  align-items: center;
+  padding: 30px 0;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.about > div > div:first-of-type > div > span {
+  width: 40px;
+  height: 100%;
+  font-size: 1.4rem;
+}
+.about > div > div:first-of-type > div > hgroup {
+  padding: 15px 10px;
+}
+.about > div > div:first-of-type > div > hgroup > h3 {
+  margin: 0;
+  font-weight: lighter !important;
+  color: #bdbdbd;
+  font-size: 1.5rem;
+}
+.about > div > div:first-of-type > div > hgroup > p {
+  height: 0;
+  display: none;
+  overflow: hidden;
+  margin: 20px 0;
+  font-size: 0.9rem;
+  color: #bdbdbd;
+  transition: 0.4s;
+}
+.about > div > div:first-of-type > div > figure {
+  width: 90%;
+  height: 90%;
+}
+.about > div > div:first-of-type > div > figure > img {
+  width: 100%;
+  height: 100%;
+}
+.about > div > div:first-of-type > div:first-of-type {
+  background-color: rgba(255, 255, 255, 0.031372549);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+.about > div > div:first-of-type > div:first-of-type > hgroup > p {
+  display: flex;
+  height: auto;
+}
+.about > div > div:last-of-type {
+  display: flex;
+  justify-content: end;
+  height: 500px;
+}
+.about > div > div:last-of-type > figure {
+  width: 90%;
+  height: 90%;
+}
+.about > div > div:last-of-type > figure > img {
+  width: 100%;
+  height: 100%;
+}
+
+.opportunity {
+  margin-top: 150px;
+}
+.opportunity > div > div > * {
+  color: #bdbdbd;
+}
+.opportunity > div > div > span {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.opportunity > div > div > span > i {
+  color: white;
+}
+.opportunity > div > div > hgroup > h4 {
+  font-size: 1.3rem;
+}
+.opportunity > div > div > hgroup > p {
+  font-size: 0.9rem;
+}
+.opportunity > div div:nth-of-type(1) > span {
+  background-color: #e14885;
+}
+.opportunity > div div:nth-of-type(2) > span {
+  background-color: #8264a2;
+}
+.opportunity > div div:nth-of-type(3) > span {
+  background-color: #7095cb;
+}
+.opportunity > div div:nth-of-type(4) > span {
+  background-color: #57dee6;
+}
+
+.studio > div > div:first-of-type * {
+  color: #bdbdbd;
+  line-height: 30px;
+}
+.studio > div > div:first-of-type > hgroup > h3 {
+  font-size: 2rem;
+  line-height: 50px;
+}
+.studio > div > div:nth-of-type(2) > figure, .studio > div > div:last-of-type > figure {
+  width: 100%;
+}
+.studio > div > div:nth-of-type(2) > figure > img, .studio > div > div:last-of-type > figure > img {
+  width: 100%;
+}
+.studio > div > div:nth-of-type(2) {
+  margin-top: 80px;
+}/*# sourceMappingURL=style.css.map */
