@@ -1,6 +1,7 @@
 const ball = document.querySelector('.ball')
 const dropDownAbout = document.querySelectorAll('.about>div>div div')
 const imageOfAbout = document.querySelector('.about>div>div:nth-of-type(2)>figure>img')
+const questionsDropDown = document.querySelectorAll('.questions>div>div:nth-of-type(2)>ul>li')
 function mousePose(event){
    let mousePoseX = event.clientX
    let mousePoseY = event.clientY
@@ -26,6 +27,25 @@ dropDownAbout.forEach((item)=>{
         item.querySelector('hgroup>p').style.display = 'block'
         item.querySelector('hgroup>p').style.height = item.querySelector('hgroup>p').scrollHeight + 'px'
         imageOfAbout.setAttribute('src' , imageSrc)
+    })
+})
+questionsDropDown.forEach((item)=>{
+    item.addEventListener('click' , ()=>{
+        const questionsDropDownDiv = item.querySelector('div')
+     if(questionsDropDownDiv.style.height){
+      questionsDropDownDiv.style.height = null
+      questionsDropDownDiv.style.overflow='hidden'
+      setTimeout(()=>{
+        questionsDropDownDiv.style.display='none'
+      },200)
+      
+     }else{
+     
+        item.style.height='auto'
+        questionsDropDownDiv.style.display = 'block'
+        questionsDropDownDiv.style.height = questionsDropDownDiv.scrollHeight+'px' 
+     }
+                
     })
 })
 
